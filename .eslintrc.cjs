@@ -1,8 +1,11 @@
 module.exports = {
+    // 设置我们的运行环境为浏览器 + es2021 + node ,否则eslint在遇到 Promise，window等全局对象时会报错
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
+    // 继承eslint推荐的规则集，vue基本的规则集，typescript的规则集
     "extends": [
         // 全部规则默认是关闭的，这个配置项开启推荐规则，推荐规则参照文档
         "eslint:recommended",
@@ -13,7 +16,7 @@ module.exports = {
         // eslint 的规则有时会和 prettier 相冲突，保存时先启用了 eslint --fix 修复了，然后又运行了 prettier 格式化，所以屏幕一闪又回到了这个状态。
         // 冲突的本质在于 eslint既负责了代码质量检测，又负责了一部分的格式美化工作,格式化部分的部分规则和 prettier不兼容。 能不能让eslint只负责代码质量检测而让prettier负责美化呢? 好在社区有了非常好的成熟方案，即 eslint-config-prettier + eslint-plugin-prettier。
         // eslint-config-prettier 的作用是关闭eslint中与prettier相互冲突的规则。
-        // eslint-plugin-prettier 的作用是赋予eslint用prettier格式化代码的能力。 安装好这两个依赖，并修改.eslintrc文件如下。
+        // eslint-plugin-prettier 的作用是赋予eslint用prettier格式化代码的能力，用eslint-plugin-prettier来使eslint使用prettier的规则来美化代码。 安装好这两个依赖，并修改.eslintrc文件如下。
         // 新增 plugin:prettier/recommended 这个规则
         "plugin:prettier/recommended" // 新增，必须放在最后面
     ],
@@ -42,6 +45,7 @@ module.exports = {
         "sourceType": "module"
     },
     // Eslint支持使用第三方插件
+    // 添加vue和@typescript-eslint插件，增强eslint的能力
     // eslint-plugin-前缀可以从插件名称中被省略
     "plugins": [
         "@typescript-eslint",
@@ -62,6 +66,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-unexpected-multiline': 'error', // 禁止空余的多行
     'no-useless-escape': 'off', // 禁止不必要的转义字符
+    'no-undef': 'off',
 
     // typeScript (https://typescript-eslint.io/rules)
     '@typescript-eslint/no-unused-vars': 'error', // 禁止定义未使用的变量

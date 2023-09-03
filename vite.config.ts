@@ -1,4 +1,4 @@
-import { defineConfig, UserConfigExport, ConfigEnv } from 'vite'
+import { UserConfigExport, ConfigEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 // 安装了 @types/node 使 node.js 支持 ts
 import path from 'path'
@@ -26,11 +26,11 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         localEnabled: command === 'serve',
       }),
     ],
-    resolve: { 
-      alias: { 
+    resolve: {
+      alias: {
         '@': path.resolve(__dirname, 'src'),
       },
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.scss'] // 导入时想要省略的扩展名列表，不建议省.vue
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.scss'], // 导入时想要省略的扩展名列表，不建议省.vue
     },
     css: {
       preprocessorOptions: {

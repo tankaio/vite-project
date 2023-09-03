@@ -12,7 +12,9 @@
 <style scoped lang="scss">
 #app {
   height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'segoe ui', Roboto,
+    'helvetica neue', Arial, 'noto sans', sans-serif, 'apple color emoji',
+    'segoe ui emoji', 'segoe ui symbol', 'noto color emoji';
   background: #f0f2f5;
-  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
 }
 </style>

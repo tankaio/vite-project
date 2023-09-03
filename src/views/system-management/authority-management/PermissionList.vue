@@ -1,6 +1,7 @@
 <template>
-  <div>404</div>
+  <div>Permissonmanagement</div>
 </template>
 
 <script setup lang="ts"></script>
+
 <style scoped lang="scss"></style>

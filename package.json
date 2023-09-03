@@ -12,11 +12,22 @@
     "lint:style": "stylelint \"./**/*.{css,scss,vue}\"",
     "lint-fix:style": "stylelint \"./**/*.{css,scss,vue}\" --fix",
     "format": "prettier --write './**/*.{vue,ts,json,md,css,less,scss,tsx,js,jsx}'",
+    "prepare": "husky install",
     "preinstall": "node ./scripts/preinstall.js",
     "build:test": "vue-tsc && vite build --mode test",
     "build:pro": "vue-tsc && vite build --mode production"
   },
+  "lint-staged": {
+    "*.{js,vue,ts,jsx,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{html,css,less,scss,md}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "axios": "^1.4.0",
     "element-plus": "^2.3.7",
     "pinia": "^2.1.6",
@@ -32,6 +43,8 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.15.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "mockjs": "^1.1.0",
     "postcss": "^8.4.25",
     "postcss-html": "^1.5.0",

@@ -31,7 +31,5 @@ const props = defineProps({
 })
 
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
-
 </script>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

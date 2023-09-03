@@ -1,23 +1,23 @@
 export interface LoginForm {
-  username: string,
-  password: string,
-  confirmPwd?: string,
+  username: string
+  password: string
+  confirmPwd?: string
 }
 
 export interface UserInfo {
-  userId: number,
-  avatar: string,
-  username: string,
-  password: string,
-  desc: string,
-  roles: string[],
-  buttons: string[],
-  routes: string[],
-  token: string,
+  userId: number
+  avatar: string
+  username: string
+  password: string
+  desc: string
+  roles: string[]
+  buttons: string[]
+  routes: string[]
+  token: string
 }
 
 export interface LoginResponse {
-  code: number,
-  data: UserInfo,
-  msg: string,
+  code: number
+  data: UserInfo
+  msg: string
 }

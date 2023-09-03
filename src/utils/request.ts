@@ -10,7 +10,7 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import useUserStore from '@/store/modules/user'
 
-let request = axios.create({
+const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 6000,
 })
@@ -32,7 +32,7 @@ request.interceptors.request.use(
 request.interceptors.response.use(
   (response) => {
     console.log('request.interceptors.response-response===', response)
-    let { code: status, msg } = response.data
+    const { code: status, msg } = response.data
     if (status === 200) return Promise.resolve(response.data)
     let message = ''
     switch (status) {
@@ -53,7 +53,7 @@ request.interceptors.response.use(
   (error) => {
     console.log('request.interceptors.response-error===', error)
     let message = ''
-    let { status, statusText } = error.response
+    const { status, statusText } = error.response
     switch (status) {
       case 403:
         message = '无权访问'
